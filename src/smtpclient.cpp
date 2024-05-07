@@ -264,7 +264,7 @@ void SmtpClient::changeState(SmtpClient::ClientState state) {
     }
 #else
     // emit all in debug mode
-    qDebug() << "[SmtpClient] State:" << staticMetaObject.enumerator(staticMetaObject.indexOfEnumerator("ClientState")).valueToKey(state);
+    qDebug() << "[SmtpClient] State:" << QObject::staticMetaObject.enumerator(QObject::staticMetaObject.indexOfEnumerator("ClientState")).valueToKey(state);
     emit stateChanged(state);
 #endif
 
